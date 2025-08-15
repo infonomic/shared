@@ -2,7 +2,7 @@
   "name": "@infonomic/shared",
   "private": false,
   "license": "MIT",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "type": "module",
   "description": "Infonomic shared is a collection of reusable library and helper modules.",
   "keywords": [
@@ -50,7 +50,10 @@
     "build": "rm -rf dist && tsc",
     "clean": "rm -rf node_modules dist",
     "test": "vitest",
-    "lint": "eslint --ext .ts,.js./src"
+    "lint": "eslint --ext .ts,.js./src",
+    "version-packages": "changeset version",
+    "release:tag": "changeset tag",
+    "release:npm": "changeset publish"
   },
   "dependencies": {
     "argon2": "^0.43.1",
