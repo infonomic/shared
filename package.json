@@ -1,0 +1,49 @@
+{
+  "name": "@infonomic/shared",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./crypto": {
+      "types": "./dist/crypto.d.ts",
+      "import": "./dist/crypto.js",
+      "default": "./dist/crypto.js"
+    },
+    "./passwords": {
+      "types": "./dist/passwords.d.ts",
+      "import": "./dist/passwords.js",
+      "default": "./dist/passwords.js"
+    },
+    "./schemas": {
+      "types": "./dist/schemas.d.ts",
+      "import": "./dist/schemas.js",
+      "default": "./dist/schemas.js"
+    }
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "clean": "rm -rf node_modules dist",
+    "test": "vitest",
+    "lint": "eslint --ext .ts,.js./src"
+  },
+  "dependencies": {
+    "argon2": "^0.43.1",
+    "dotenv": "^17.2.1",
+    "jose": "^6.0.12",
+    "zod": "^4.0.17"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.1.4",
+    "@types/node": "^24.2.1",
+    "@typescript-eslint/eslint-plugin": "^8.39.0",
+    "ts-node": "^10.9.2",
+    "typescript": "5.9.2",
+    "vitest": "^3.2.4"
+  }
+}
