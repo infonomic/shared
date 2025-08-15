@@ -1,9 +1,29 @@
 {
   "name": "@infonomic/shared",
-  "version": "1.0.0",
-  "private": true,
+  "private": false,
+  "license": "MIT",
+  "version": "1.1.0",
   "type": "module",
+  "description": "Infonomic shared is a collection of reusable library and helper modules.",
+  "keywords": [
+    "uikit",
+    "design system"
+  ],
+  "homepage": "https://github.com/infonomic/shared",
+  "bugs": {
+    "url": "https://github.com/infonomic/shared/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/infonomic/shared.git"
+  },
   "sideEffects": false,
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.js",
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -40,10 +60,39 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.1.4",
+    "@changesets/cli": "^2.29.5",
     "@types/node": "^24.2.1",
     "@typescript-eslint/eslint-plugin": "^8.39.0",
     "ts-node": "^10.9.2",
     "typescript": "5.9.2",
     "vitest": "^3.2.4"
+  },
+  "publishConfig": {
+    "access": "public",
+    "files": [
+      "dist/"
+    ],
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.js",
+        "default": "./dist/index.js"
+      },
+      "./crypto": {
+        "types": "./dist/crypto.d.ts",
+        "import": "./dist/crypto.js",
+        "default": "./dist/crypto.js"
+      },
+      "./passwords": {
+        "types": "./dist/passwords.d.ts",
+        "import": "./dist/passwords.js",
+        "default": "./dist/passwords.js"
+      },
+      "./schemas": {
+        "types": "./dist/schemas.d.ts",
+        "import": "./dist/schemas.js",
+        "default": "./dist/schemas.js"
+      }
+    }
   }
 }

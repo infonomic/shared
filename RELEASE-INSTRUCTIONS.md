@@ -2,7 +2,7 @@
 
 ## I: Auto flow with GitHub action:
 
-NOTE: This flow will use a GitHub action to version packages based on a pending changeset in the .changeset directory, and then create a PR to be merged after manual review. Once the PR has been accepted, the action will then publish the package to NPM - currently using a token from the 58bits NPM account (expires in 20 years, and only has access to the @infonomic/uikit repo).
+NOTE: This flow will use a GitHub action to version packages based on a pending changeset in the .changeset directory, and then create a PR to be merged after manual review. Once the PR has been accepted, the action will then publish the package to NPM - currently using a token from the 58bits NPM account (expires in 20 years, and only has access to the @infonomic/shared repo).
 
 1. `pnpm changeset`
 
