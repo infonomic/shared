@@ -1,5 +1,11 @@
 # @infonomic/crypto
 
+## 2.1.0
+
+### Minor Changes
+
+- Separate passwords exports for bundler compatibility
+
 ## 2.0.0
 
 ### Major Changes
