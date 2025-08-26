@@ -2,7 +2,7 @@
   "name": "@infonomic/crypto",
   "private": false,
   "license": "MIT",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "type": "module",
   "description": "Infonomic crypto is a collection of reusable crypto library functions and helper modules.",
   "keywords": [

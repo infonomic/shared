@@ -1,5 +1,11 @@
 # @infonomic/crypto
 
+## 2.2.0
+
+### Minor Changes
+
+- Correct export of crypto functions separate from passwords
+
 ## 2.1.0
 
 ### Minor Changes

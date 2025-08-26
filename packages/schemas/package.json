@@ -2,7 +2,7 @@
   "name": "@infonomic/schemas",
   "private": false,
   "license": "MIT",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "type": "module",
   "description": "Infonomic schemas is a collection of reusable Zod 4 schemas and helper methods.",
   "keywords": [
