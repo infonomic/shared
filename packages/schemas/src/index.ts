@@ -13,9 +13,7 @@ export const integerFromStringSchema = z.coerce.number().int()
  * cases where we will append paths that begin with a slash onto this url)
  *
  */
-export const urlSchema = z
-  .url()
-  .refine((val) => !val.endsWith('/'))
+export const urlSchema = z.url().refine((val) => !val.endsWith('/'))
 
 /**
  * base64Schema
@@ -23,9 +21,7 @@ export const urlSchema = z
  * @description: Matches base64-encoded strings and decodes them into a node Buffer
  *
  */
-export const base64Schema = z
-  .base64()
-  .transform((val) => Buffer.from(val, 'base64'))
+export const base64Schema = z.base64().transform((val) => Buffer.from(val, 'base64'))
 
 /**
  * uuidSchema
@@ -126,30 +122,27 @@ export const passwordSchema = z
     'Password must contain at least one uppercase letter, one lowercase letter, one number, and one character from the following: #?!@$%^&*-'
   )
 
-
 /**
-* safeNumber - take any invalid values and return 0
-*/
+ * safeNumber - take any invalid values and return 0
+ */
 export const safeNumber = z.preprocess((val) => {
   if (val === null || val === undefined || Number.isNaN(val)) {
-    return 0;
+    return 0
   }
-  return val;
+  return val
 }, z.number())
 
 export type Gender = (typeof GENDER_VALUES)[number]
 
-export const GENDER_VALUES = ['male', 'female', 'non_binary', 'other', 'prefer_not_to_say'] as const;
+export const GENDER_VALUES = ['male', 'female', 'non_binary', 'other', 'prefer_not_to_say'] as const
 
-export const genderSchema = z
-  .string()
-  .superRefine((val, ctx) => {
-    const v = typeof val === 'string' ? val.trim() : ''
-    if (v === '') {
-      ctx.addIssue({ code: 'custom', message: 'Gender is required.' })
-      return
-    }
-    if (!GENDER_VALUES.includes(v as any)) {
-      ctx.addIssue({ code: 'custom', message: 'Invalid gender value.' })
-    }
-  });
+export const genderSchema = z.string().superRefine((val, ctx) => {
+  const v = typeof val === 'string' ? val.trim() : ''
+  if (v === '') {
+    ctx.addIssue({ code: 'custom', message: 'Gender is required.' })
+    return
+  }
+  if (!GENDER_VALUES.includes(v as any)) {
+    ctx.addIssue({ code: 'custom', message: 'Invalid gender value.' })
+  }
+})
