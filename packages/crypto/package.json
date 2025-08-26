@@ -28,6 +28,11 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "default": "./dist/index.js"
+    },
+    "./passwords": {
+      "types": "./dist/passwords.d.ts",
+      "import": "./dist/passwords.js",
+      "default": "./dist/passwords.js"
     }
   },
   "scripts": {
