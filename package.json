@@ -1,6 +1,6 @@
 {
   "name": "@infonomic/shared",
-  "private": false,
+  "private": true,
   "license": "MIT",
   "version": "1.2.0",
   "type": "module",
