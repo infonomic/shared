@@ -1,5 +1,11 @@
 # @infonomic/schemas
 
+## 2.3.0
+
+### Minor Changes
+
+- 0feebda: added base64DecoderSchema
+
 ## 2.2.0
 
 ### Minor Changes
