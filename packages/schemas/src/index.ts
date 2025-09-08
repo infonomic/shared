@@ -9,19 +9,38 @@ export const integerFromStringSchema = z.coerce.number().int()
 /**
  * urlSchema
  *
- * @description: Matches urls that lack a trailing slash (intended for
+ * @description: Matches URLs that lack a trailing slash (intended for
  * cases where we will append paths that begin with a slash onto this url)
  *
  */
 export const urlSchema = z.url().refine((val) => !val.endsWith('/'))
 
 /**
+ * base64DecoderSchema (isomorphic)
+ *
+ * @description: Decodes a base64-encoded string into a UTF-8 string.
+ * Works in both browser and Node.js environments.
+ */
+export const base64DecoderSchema = z.base64().transform((val) => {
+  // Browser: atob + TextDecoder
+  if (typeof window !== 'undefined' && typeof window.atob === 'function') {
+    const binary = window.atob(val)
+    const bytes = Uint8Array.from(binary, (c) => c.charCodeAt(0))
+    return new TextDecoder().decode(bytes)
+  }
+  // Node.js: Buffer
+  return Buffer.from(val, 'base64').toString('utf-8')
+})
+
+/**
  * base64Schema
  *
- * @description: Matches base64-encoded strings and decodes them into a node Buffer
- *
+ * @description: Decodes a base64-encoded string into a Buffer.
  */
-export const base64Schema = z.base64().transform((val) => Buffer.from(val, 'base64'))
+export const base64Schema = z.string().transform((val) => {
+  // Node.js: Buffer
+  return Buffer.from(val, 'base64')
+})
 
 /**
  * uuidSchema
