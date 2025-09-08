@@ -1,5 +1,11 @@
 # @infonomic/crypto
 
+## 2.3.0
+
+### Minor Changes
+
+- 3aef1fa: changed build script dependencies
+
 ## 2.2.0
 
 ### Minor Changes
