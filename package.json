@@ -23,8 +23,8 @@
     "build": "turbo run build",
     "test": "turbo run test",
     "version-packages": "changeset version",
-    "release:tag": "changeset tag",
-    "release:npm": "changeset publish"
+    "release:tag": "turbo run build && changeset tag",
+    "release:npm": "turbo run build && changeset publish"
   },
   "dependencies": {
     "turbo": "^2.5.5",

@@ -37,8 +37,8 @@
     "test": "vitest",
     "lint": "eslint --ext .ts,.js./src",
     "version-packages": "changeset version",
-    "release:tag": "changeset tag",
-    "release:npm": "changeset publish"
+    "release:tag": "pnpm run build && changeset tag",
+    "release:npm": "pnpm run build && changeset publish"
   },
   "dependencies": {
     "dotenv": "^17.2.1",
